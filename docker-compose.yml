@@ -1,0 +1,17 @@
+services:
+  watchtower:
+    image: nickfedor/watchtower:latest # this one works with ARM64
+    platform: linux/amd64 
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=60 <em># Poll every 60 seconds</em>
+      - WATCHTOWER_DEBUG=true  # Ajoute cette ligne
+      - WATCHTOWER_TRACE=true  # Et celle-ci  
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
+  express-app:
+    image: natalie2201/helsinki-module4:latest
+    ports:
+      - "8080:8080"
+    container_name: express-app
+    restart: always
