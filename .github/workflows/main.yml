@@ -27,4 +27,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: natalie2201/helsinki-module4:latest
+        tags: ${{ secrets.DOCKER_NAMESPACE }}/helsinki-module4:latest
