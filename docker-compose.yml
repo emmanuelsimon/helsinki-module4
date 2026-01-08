@@ -4,8 +4,6 @@ services:
     platform: linux/amd64 
     environment:
       - WATCHTOWER_POLL_INTERVAL=60 <em># Poll every 60 seconds</em>
-      - WATCHTOWER_DEBUG=true  # Ajoute cette ligne
-      - WATCHTOWER_TRACE=true  # Et celle-ci  
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     container_name: watchtower
